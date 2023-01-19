@@ -23,6 +23,8 @@ solution(["ayaye", "uuu", "yeye", "yemawoo", "ayaayaa"])
  * 다른 분의 풀이
  * 
 
+<복습 필>
+
 function solution(babbling) {
   const regexp1 = /(aya|ye|woo|ma)\1+/;
   const regexp2 = /^(aya|ye|woo|ma)+$/;
