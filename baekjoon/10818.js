@@ -1,0 +1,5 @@
+const fs = require('fs')
+const input = fs.readFileSync('test.txt').toString().trim().split('\n')
+const maxNum = Math.max(...input[1].split(' '))
+const minNum = Math.min(...input[1].split(' '))
+console.log(`${minNum} ${maxNum}`)
