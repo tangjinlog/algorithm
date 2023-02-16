@@ -17,30 +17,18 @@ function solution(N) {
 }
 solution(10000)
 
-// /**
-//  * 39는 51의 생성자이다
-//  * 생성자가 없는 수를 셀프 넘버라고 한다
-//  * 1~10000 구하라
-//  */
+/**
+ * 39는 51의 생성자이다
+ * 생성자가 없는 수를 셀프 넘버라고 한다
+ * 1~10000 구하라
+ * 
+ * 배열을 만들고 인덱스 값을 d(n)함수를 통해 리턴받은 수로 정하고
+ * testArr[d(n)] = 1로 기본 설정 (생성자가 있는 수)
+ * 이 수를 제외시키고
+ * 해당 인덱스의 값이 1이 아닌 수만 출력
+ */
 
-// 4
+// d(2), i=2
 // [0,1,0,0,1]
-// 3
-// [0,1,1,]
-//1
-// [0,0,1,0,1,0,1]
-
-// function d(n) {
-//     let result = n;
-//     let resm = n.toString().split('');
-//     console.log(resm)
-//     for (let i = 0; i < resm.length; i++) {
-//         result += parseInt(resm[i])
-//     }
-
-//     return result;
-// }
-
-// console.log(d(2))
-
-// console.log(n.toString().split(''))
+// d(3), i=3
+// [0,1,0,0,1,0,1]
