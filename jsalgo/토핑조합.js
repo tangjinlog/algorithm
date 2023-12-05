@@ -28,12 +28,48 @@ function combinations(arr,num) {
   const results = [];
   if(num === 1) return arr.map(v=>[v])
   arr.forEach((fixed,idx,origin) => {
-    const rest = origin.slice(idx + 1);
+    const rest = [...origin.slice(0,idx),...origin.slice(idx + 1)];
+    // console.log(fixed,rest,idx,num)
     const combinationsArr = combinations(rest,num -1);
-    console.log(combinationsArr)
     const attached = combinationsArr.map(v => [fixed, ...v]);
     results.push(...attached);
   })
   return results;
 }
-console.log(combinations([1,2,3,4,5],5))
+let a = combinations([1,2,3,4,5],3)
+// console.log(a)
+
+
+function combinations(arr,num) {
+  const results = [];
+  if(num === 1) return arr.map(v=>[v])
+  arr.forEach((fixed,idx,origin) => {
+    const rest = [...origin.slice(0,idx),...origin.slice(idx + 1)];
+    // console.log(fixed,rest,idx,num)
+    const combinationsArr = combinations(rest,num -1);
+    const attached = combinationsArr.map(v => [fixed, ...v]);
+    results.push(...attached);
+  })
+  return results;
+}
+let b = combinations([1,2,3,4,5],3)
+// console.log(b)
+
+
+let set = new Set();
+numOfCase([1,7],'')
+function numOfCase(arr,str) {
+	if(arr.length) {
+    	for(let i = 0; i <arr.length; i++) {
+        	let copy = [...arr];
+            console.log(copy, i,str , arr[i])
+          	copy.splice(i,1);
+          	numOfCase(copy,str + arr[i])
+        }
+    }
+  	if(str > 0) set.add(Number(str))
+    console.log(set)
+}
+console.log(Array.from(set))  // [17, 1, 71, 7]
+
+//첫 호출 -> 포문 진입 ->  재귀 -> 반복 -> 기저사례return
